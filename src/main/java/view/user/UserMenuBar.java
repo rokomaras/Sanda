@@ -3,8 +3,17 @@ package view.user;
 import view.login.LoginFrame;
 import javax.swing.*;
 
+/**
+ * Klasa koja predstavlja menu bar za korisnički prozor.
+ * Sadrži opcije za pristup rezervacijama, odjavu i pomoć.
+ */
 public class UserMenuBar extends JMenuBar {
 
+    /**
+     * Konstruktor koji kreira menu bar s opcijama za korisničko sučelje.
+     * 
+     * @param frame glavni prozor s kojim je menu bar povezan
+     */
     public UserMenuBar(JFrame frame) {
         // File Menu
         JMenu fileMenu = new JMenu("File");

@@ -13,6 +13,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+/**
+ * Panel koji prikazuje rezervacije trenutno prijavljenog korisnika.
+ * Omogućuje pregled i brisanje vlastitih rezervacija.
+ */
 public class MyReservationsPanel extends JPanel {
 
     private JTable reservationsTable;
@@ -21,6 +25,10 @@ public class MyReservationsPanel extends JPanel {
 
     private User loggedInUser = Controller.getLoggedInUser();
 
+    /**
+     * Konstruktor koji inicijalizira panel s rezervacijama korisnika.
+     * Postavlja layout, inicijalizira komponente i učitava rezervacije.
+     */
     public MyReservationsPanel() {
         setLayout(new BorderLayout());
 

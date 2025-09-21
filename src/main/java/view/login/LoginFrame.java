@@ -2,8 +2,16 @@ package view.login;
 
 import javax.swing.*;
 
+/**
+ * Prozor za prijavu korisnika u sustav.
+ * Omogućuje korisnicima unos korisničkih podataka za autentifikaciju.
+ */
 public class LoginFrame extends JFrame {
 
+    /**
+     * Konstruktor koji kreira i konfigurira prozor za prijavu.
+     * Postavlja naslov, veličinu, menu bar i dodaje panel za prijavu.
+     */
     public LoginFrame() {
         setTitle("Login");
         setSize(400, 250);
