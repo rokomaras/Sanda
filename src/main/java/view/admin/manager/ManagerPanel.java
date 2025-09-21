@@ -7,6 +7,10 @@ import model.User;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel za upravljanje restoranima u administratorskom sučelju.
+ * Omogućuje dodavanje novih restorana s potrebnim podacima.
+ */
 public class ManagerPanel extends JPanel {
 
     private JTextField nameField;
@@ -18,6 +22,11 @@ public class ManagerPanel extends JPanel {
     private final JFrame parentFrame;
 
 
+    /**
+     * Konstruktor koji inicijalizira panel za upravljanje restoranima.
+     * 
+     * @param frame glavni prozor s kojim je panel povezan
+     */
     public ManagerPanel(JFrame frame) {
         this.parentFrame = frame;
 

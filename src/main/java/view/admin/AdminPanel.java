@@ -7,6 +7,10 @@ import model.User;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel za administratorsko sučelje koji omogućuje kreiranje novih korisnika.
+ * Administratori mogu dodati korisnike s ulogama korisnika ili restorana.
+ */
 public class AdminPanel extends JPanel {
 
     private JTextField usernameField;
@@ -18,6 +22,11 @@ public class AdminPanel extends JPanel {
     private final Controller controller = Controller.getInstance();
     private final JFrame parentFrame;
 
+    /**
+     * Konstruktor koji inicijalizira administratorski panel.
+     * 
+     * @param frame glavni prozor s kojim je panel povezan
+     */
     public AdminPanel(JFrame frame) {
         this.parentFrame = frame;
         setLayout(new GridBagLayout());
