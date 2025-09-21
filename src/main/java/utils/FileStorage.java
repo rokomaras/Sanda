@@ -7,9 +7,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa za pohranu i učitavanje rezervacija u/iz datoteka.
+ * Podržava pohranu u BIN i TXT formatima ovisno o ekstenziji datoteke.
+ */
 public class FileStorage {
 
     // ✅ Spremanje u BIN ili TXT ovisno o ekstenziji datoteke
+    /**
+     * Sprema listu rezervacija u datoteku u odgovarajućem formatu.
+     * Format se određuje na osnovu ekstenzije datoteke (.bin ili .txt).
+     * 
+     * @param reservations lista rezervacija za pohranu
+     * @param file datoteka u koju se sprema
+     * @throws IllegalArgumentException ako format datoteke nije podržan
+     */
     public static void saveReservations(List<Reservation> reservations, File file) {
         String name = file.getName().toLowerCase();
         if (name.endsWith(".bin")) {
@@ -22,6 +34,14 @@ public class FileStorage {
     }
 
     // ✅ Učitavanje iz BIN ili TXT ovisno o ekstenziji
+    /**
+     * Učitava listu rezervacija iz datoteke u odgovarajućem formatu.
+     * Format se određuje na osnovu ekstenzije datoteke (.bin ili .txt).
+     * 
+     * @param file datoteka iz koje se učitava
+     * @return lista učitanih rezervacija
+     * @throws IllegalArgumentException ako format datoteke nije podržan
+     */
     public static List<Reservation> loadReservations(File file) {
         String name = file.getName().toLowerCase();
         if (name.endsWith(".bin")) {
@@ -34,6 +54,12 @@ public class FileStorage {
     }
 
     // ---------------- BIN ----------------
+    /**
+     * Sprema rezervacije u binarnu datoteku koristeći serijalizaciju.
+     * 
+     * @param reservations lista rezervacija za pohranu
+     * @param file datoteka u koju se sprema
+     */
     private static void saveReservationsToBin(List<Reservation> reservations, File file) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
             oos.writeObject(reservations);
@@ -42,6 +68,12 @@ public class FileStorage {
         }
     }
 
+    /**
+     * Učitava rezervacije iz binarne datoteke koristeći deserijalizaciju.
+     * 
+     * @param file datoteka iz koje se učitava
+     * @return lista učitanih rezervacija ili prazna lista ako je došlo do greške
+     */
     @SuppressWarnings("unchecked")
     private static List<Reservation> loadReservationsFromBin(File file) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
@@ -52,6 +84,12 @@ public class FileStorage {
     }
 
     // ---------------- TXT ----------------
+    /**
+     * Sprema rezervacije u tekstualnu datoteku u CSV formatu.
+     * 
+     * @param reservations lista rezervacija za pohranu
+     * @param file datoteka u koju se sprema
+     */
     private static void saveReservationsToTxt(List<Reservation> reservations, File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             for (Reservation r : reservations) {
@@ -64,6 +102,12 @@ public class FileStorage {
         }
     }
 
+    /**
+     * Učitava rezervacije iz tekstualne datoteke u CSV formatu.
+     * 
+     * @param file datoteka iz koje se učitava
+     * @return lista učitanih rezervacija ili prazna lista ako je došlo do greške
+     */
     private static List<Reservation> loadReservationsFromTxt(File file) {
         List<Reservation> reservations = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {

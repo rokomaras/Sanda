@@ -11,10 +11,19 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.util.List;
 
+/**
+ * Menu bar za prozor rezervacija s opcijama za pohranu, učitavanje i navigaciju.
+ */
 public class ReservationMenuBar extends JMenuBar {
 
     private final Controller controller = Controller.getInstance();
 
+    /**
+     * Konstruktor koji kreira menu bar za prozor rezervacija.
+     * 
+     * @param frame glavni prozor s kojim je menu bar povezan
+     * @param reservationPanel panel s rezervacijama za osvježavanje podataka
+     */
     public ReservationMenuBar(JFrame frame, ReservationPanel reservationPanel) {
         JMenu menu = new JMenu("Options");
 

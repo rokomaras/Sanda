@@ -9,6 +9,10 @@ import view.user.UserFrame;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel za prijavu korisnika s poljima za korisničko ime i lozinku.
+ * Omogućuje autentifikaciju i preusmjeravanje na odgovarajuće sučelje ovisno o ulozi korisnika.
+ */
 public class LoginPanel extends JPanel {
 
     private JTextField usernameField;
@@ -17,6 +21,10 @@ public class LoginPanel extends JPanel {
     private final Controller controller = Controller.getInstance();
     private User loggedInUser = Controller.getLoggedInUser();
 
+    /**
+     * Konstruktor koji inicijalizira panel za prijavu s potrebnim komponentama.
+     * Postavlja layout, polja za unos i gumb za prijavu s event listenerima.
+     */
     public LoginPanel() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();

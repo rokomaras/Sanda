@@ -15,6 +15,10 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Panel koji prikazuje rezervacije za restorane s mogućnostima upravljanja statusom.
+ * Omogućuje restoranima pregled rezervacija i ažuriranje njihovih statusa.
+ */
 public class ReservationPanel extends JPanel {
 
     private JTable table;
@@ -22,6 +26,11 @@ public class ReservationPanel extends JPanel {
     private final Controller controller = Controller.getInstance();
     private User loggedInUser = Controller.getLoggedInUser();
 
+    /**
+     * Konstruktor koji inicijalizira panel s rezervacijama.
+     * 
+     * @param frame glavni prozor s kojim je panel povezan
+     */
     public ReservationPanel(JFrame frame) {
         setLayout(new BorderLayout());
 
@@ -90,6 +99,9 @@ public class ReservationPanel extends JPanel {
         }
     }
 
+    /**
+     * Osvježava tablicu s rezervacijama učitavanjem najnovijih podataka.
+     */
     public void refreshTable() {
         loadReservations();
     }

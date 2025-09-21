@@ -14,6 +14,10 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Panel korisničkog sučelja za kreiranje novih rezervacija.
+ * Omogućuje korisnicima odabir restorana, datuma, vremena i broja gostiju.
+ */
 public class UserPanel extends JPanel {
 
     private JComboBox<Restaurant> restaurantComboBox;
@@ -27,6 +31,10 @@ public class UserPanel extends JPanel {
     private final Controller controller = Controller.getInstance();
     private User loggedInUser = Controller.getLoggedInUser();
 
+    /**
+     * Konstruktor koji inicijalizira korisnički panel za rezervacije.
+     * Postavlja layout i inicijalizira sve komponente.
+     */
     public UserPanel() {
         setLayout(new BorderLayout());
 
